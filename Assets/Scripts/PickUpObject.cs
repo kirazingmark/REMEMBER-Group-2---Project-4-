@@ -99,5 +99,25 @@ public class PickUpObject : MonoBehaviour {
         }
     }
 
+    void firePlace()
+    {
+        if (Input.GetKey(KeyCode.E))
+        {
+            int x = Screen.width / 2;
+            int y = Screen.height / 2;
+
+            Ray ray = mainCamera.ScreenPointToRay(new Vector3(x, y));
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit))
+            {
+                PhaseScript ps = hit.collider.GetComponent<PhaseScript>();
+                if (ps != null)
+                {
+                    
+                }
+            }
+        }
+    }
+
 
 }

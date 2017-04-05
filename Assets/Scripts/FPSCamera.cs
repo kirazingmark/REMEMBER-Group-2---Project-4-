@@ -39,5 +39,25 @@ public class FPSCamera : MonoBehaviour {
         player.transform.Rotate(0, hozTurn, 0);
         this.gameObject.transform.Rotate(verTurn, 0, 0);
 
+        Vector3 angles = gameObject.transform.eulerAngles;
+        if (angles.x > 180.0f)
+        {
+            angles.x = angles.x - 360.0f;
+        }
+
+        if (angles.x > 25)
+        {
+            //Debug.Log(angles.x);
+            angles.x = 25;
+            gameObject.transform.eulerAngles = angles;
+        }
+        if (angles.x < -25)
+        {
+            //Debug.Log(angles.x);
+            angles.x = -25;
+            gameObject.transform.eulerAngles = angles;
+        }
     }
+
 }
+
