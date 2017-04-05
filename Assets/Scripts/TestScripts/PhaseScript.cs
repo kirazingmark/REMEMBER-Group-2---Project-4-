@@ -21,6 +21,17 @@ public class PhaseScript : MonoBehaviour {
     [Header("Phase Camera Offset")]
     public float phaseCameraOffset;
 
+    ///////////  Start Singleton Block  ///////////
+    public static PhaseScript Instance;
+    void Awake()
+    {
+        if (Instance == null)
+        { Instance = this; }
+        else if (Instance != this)
+        { Destroy(gameObject); }
+    }
+    ///////////  End Singleton Block  ///////////
+
     void Start ()
     {
         if (tagSearch == true)
