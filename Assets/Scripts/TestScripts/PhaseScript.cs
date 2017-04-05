@@ -12,6 +12,7 @@ public class PhaseScript : MonoBehaviour {
 
     [Header("Objects")]
     public GameObject player;
+    public GameObject playerCamera;
     public GameObject phaseCamera;
 
     [Header("Player Above or Below?")]
@@ -46,7 +47,7 @@ public class PhaseScript : MonoBehaviour {
 
     void Transition()
     {
-        if (Input.GetKeyDown("e"))
+        if (Input.GetKeyDown("q"))
         {
             if (playerAbove)
             {
@@ -80,6 +81,6 @@ public class PhaseScript : MonoBehaviour {
                                              player.transform.position.z);
 
         phaseCamera.transform.position = targetPosition;
-        phaseCamera.transform.rotation = player.transform.rotation;
+        phaseCamera.transform.rotation = playerCamera.transform.rotation;
     }
 }
