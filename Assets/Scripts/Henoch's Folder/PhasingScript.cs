@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PhaseScript : MonoBehaviour {
+public class PhasingScript : MonoBehaviour
+{
 
     [Header("Unit Offset Between Worlds")]
     public float worldOffset;
@@ -25,7 +26,7 @@ public class PhaseScript : MonoBehaviour {
     public bool turnWorld = false;
 
     ///////////  Start Singleton Block  ///////////
-    public static PhaseScript Instance;
+    public static PhasingScript Instance;
     void Awake()
     {
         if (Instance == null)
@@ -35,7 +36,7 @@ public class PhaseScript : MonoBehaviour {
     }
     ///////////  End Singleton Block  ///////////
 
-    void Start ()
+    void Start()
     {
         if (tagSearch == true)
         {
@@ -51,20 +52,17 @@ public class PhaseScript : MonoBehaviour {
             phaseCameraOffset = worldOffset;
         }
     }
-	
-	void Update ()
+
+    void Update()
     {
         PhaseCameraControl();
 
         //comment this part so it can work on henoch's portion
-        Transition();
-	}
+        //Transition();
+    }
 
     public void Transition()
-    {
-        // removed the on key hit function for it's to work on Henoch's function
-        if(Input.GetKeyDown("q"))
-        {
+    {        
             if (playerAbove)
             {
                 player.transform.position = new Vector3(player.transform.position.x,
@@ -83,13 +81,13 @@ public class PhaseScript : MonoBehaviour {
                 turnWorld = false;
             }
 
-        }
+        
 
     }
 
     void SearchForObjects()
     {
-        player      = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("Player");
         phaseCamera = GameObject.FindGameObjectWithTag("PhaseCamera");
     }
 

@@ -8,6 +8,7 @@ public class PickUpObject : MonoBehaviour {
     public GameObject carriedObject;
     public bool isCarrying;
     public bool isOpening;
+    public bool isTurn;
     public float distance;
     public float smooth;
     public float timer = 5;
@@ -30,6 +31,16 @@ public class PickUpObject : MonoBehaviour {
             PickUp();
         }
         openDoor();
+        if(isTurn)
+        {
+            TeleportBack();
+        }
+        else
+        {
+            firePlace();
+        }
+       
+        
 
         
 
@@ -101,7 +112,7 @@ public class PickUpObject : MonoBehaviour {
 
     void firePlace()
     {
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             int x = Screen.width / 2;
             int y = Screen.height / 2;
@@ -110,10 +121,32 @@ public class PickUpObject : MonoBehaviour {
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit))
             {
-                PhaseScript ps = hit.collider.GetComponent<PhaseScript>();
-                if (ps != null)
+                FirePlace fp = hit.collider.GetComponent<FirePlace>();
+                if (fp != null)
                 {
-                    
+                    isTurn = true;
+                    PhasingScript.Instance.Transition();
+                }
+            }
+        }
+    }
+
+    void TeleportBack()
+    {
+        if (Input.GetKeyDown(KeyCode.E) && isTurn == true)
+        {
+            int x = Screen.width / 2;
+            int y = Screen.height / 2;
+
+            Ray ray = mainCamera.ScreenPointToRay(new Vector3(x, y));
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit))
+            {
+                FirePlace fp = hit.collider.GetComponent<FirePlace>();
+                if (fp != null)
+                {
+                    isTurn = false;
+                    PhasingScript.Instance.Transition();
                 }
             }
         }
