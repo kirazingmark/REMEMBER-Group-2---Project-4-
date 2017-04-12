@@ -25,6 +25,8 @@ public class PhasingScript : MonoBehaviour
     [Header("Is The Player on The Other World?")]
     public bool turnWorld = false;
 
+    public bool turnOn;
+
     ///////////  Start Singleton Block  ///////////
     public static PhasingScript Instance;
     void Awake()
@@ -51,6 +53,8 @@ public class PhasingScript : MonoBehaviour
         {
             phaseCameraOffset = worldOffset;
         }
+
+        phaseCamera.SetActive(false);
     }
 
     void Update()
@@ -59,6 +63,19 @@ public class PhasingScript : MonoBehaviour
 
         //comment this part so it can work on henoch's portion
         //Transition();
+
+        if (Input.GetKeyDown(KeyCode.Q) && turnOn == false)
+        {
+            phaseCamera.SetActive(true);
+            turnOn = true;
+        }
+        else if(Input.GetKeyDown(KeyCode.Q) && turnOn == true)
+        {
+            phaseCamera.SetActive(false);
+            turnOn = false;
+        }
+
+       
     }
 
     public void Transition()
@@ -81,6 +98,7 @@ public class PhasingScript : MonoBehaviour
                 turnWorld = false;
             }
 
+        
         
 
     }
