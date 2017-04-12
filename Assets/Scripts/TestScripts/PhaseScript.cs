@@ -58,8 +58,6 @@ public class PhaseScript : MonoBehaviour {
     {
         PhaseCameraControl();
 
-        Transition();
-
         ViewToggle();
 	}
 
