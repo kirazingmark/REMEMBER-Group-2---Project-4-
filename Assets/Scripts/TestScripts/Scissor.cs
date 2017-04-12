@@ -1,9 +1,24 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class Scissor : MonoBehaviour 
 {
+    [Header("Standard Rect Size/Position")]
 	public Rect scissorRect = new Rect (0,0,1,1);
+
+    [Header("Zoomed Rect Size/Position")]
+    public Rect zoomRect = new Rect(0,0,1,1);
+
+    [Header("Zoomed Toggle")]
+    public bool isZoomed = false;
+
+    [Header("Window Backing Toggle")]
+    public bool windowBacking = false;
+
+    [Header("Backing Images")]
+    public Image standardBacking;
+    public Image zoomBacking;
 
     public static void SetScissorRect( Camera cam, Rect r )
 	{		
@@ -38,6 +53,63 @@ public class Scissor : MonoBehaviour
 
 	void OnPreRender () 
 	{
-        SetScissorRect( GetComponent<Camera>(), scissorRect );
+        ZoomToggle();
 	}
+
+    void Update()
+    {
+        ZoomControl();
+        BackingControl();
+    }
+
+    void ZoomToggle()
+    {
+        if(!isZoomed)
+            SetScissorRect(GetComponent<Camera>(), scissorRect);
+        else if(isZoomed)
+            SetScissorRect(GetComponent<Camera>(), zoomRect);
+    }
+
+    void ZoomControl()
+    {
+        if (Input.GetMouseButtonDown(1))
+        {
+            if (!isZoomed)
+            {
+                isZoomed = true;
+                if (windowBacking)
+                {
+                    standardBacking.enabled = false;
+                    zoomBacking.enabled = true;
+                }
+            } 
+            else if (isZoomed)
+            {
+                isZoomed = false;
+
+                if (windowBacking)
+                {
+                    standardBacking.enabled = true;
+                    zoomBacking.enabled = false;
+                }
+            }
+        }
+    }
+
+    void BackingControl()
+    {
+        if (windowBacking)
+        {
+            if (!isZoomed)
+            {
+                standardBacking.enabled = true;
+                zoomBacking.enabled = false;
+            }
+            else if (isZoomed)
+            {
+                standardBacking.enabled = false;
+                zoomBacking.enabled = true;
+            }
+        }
+    }
 }
