@@ -24,6 +24,9 @@ public class PhaseScript : MonoBehaviour {
     [Header("Is The Player on The Other World?")]
     public bool turnWorld = false;
 
+    [Header("Is Phase View enabled?")]
+    public bool viewEnabled = true;
+
     ///////////  Start Singleton Block  ///////////
     public static PhaseScript Instance;
     void Awake()
@@ -41,7 +44,6 @@ public class PhaseScript : MonoBehaviour {
         {
             SearchForObjects();
         }
-
         if (playerAbove)
         {
             phaseCameraOffset = -worldOffset;
@@ -56,35 +58,30 @@ public class PhaseScript : MonoBehaviour {
     {
         PhaseCameraControl();
 
-        //comment this part so it can work on henoch's portion
         Transition();
+
+        ViewToggle();
 	}
 
     public void Transition()
     {
-        // removed the on key hit function for it's to work on Henoch's function
-        if(Input.GetKeyDown("q"))
+        if (playerAbove)
         {
-            if (playerAbove)
-            {
-                player.transform.position = new Vector3(player.transform.position.x,
-                                                        player.transform.position.y - worldOffset,
-                                                        player.transform.position.z);
-                phaseCameraOffset = worldOffset;
-                playerAbove = false;
-            }
-            else if (!playerAbove)
-            {
-                player.transform.position = new Vector3(player.transform.position.x,
-                                                        player.transform.position.y + worldOffset,
-                                                        player.transform.position.z);
-                phaseCameraOffset = -worldOffset;
-                playerAbove = true;
-                turnWorld = false;
-            }
-
+            player.transform.position = new Vector3(player.transform.position.x,
+                                                    player.transform.position.y - worldOffset,
+                                                    player.transform.position.z);
+            phaseCameraOffset = worldOffset;
+            playerAbove = false;
         }
-
+        else if (!playerAbove)
+        {
+            player.transform.position = new Vector3(player.transform.position.x,
+                                                    player.transform.position.y + worldOffset,
+                                                    player.transform.position.z);
+            phaseCameraOffset = -worldOffset;
+            playerAbove = true;
+            turnWorld = false;
+        }
     }
 
     void SearchForObjects()
@@ -101,5 +98,22 @@ public class PhaseScript : MonoBehaviour {
 
         phaseCamera.transform.position = targetPosition;
         phaseCamera.transform.rotation = playerCamera.transform.rotation;
+    }
+
+    void ViewToggle()
+    {
+        if (Input.GetKeyDown("q"))
+        {
+            if (viewEnabled)
+            {
+                viewEnabled = false;
+                phaseCamera.SetActive(false);
+            }
+            else if (!viewEnabled)
+            {
+                viewEnabled = true;
+                phaseCamera.SetActive(true);
+            }
+        } 
     }
 }
