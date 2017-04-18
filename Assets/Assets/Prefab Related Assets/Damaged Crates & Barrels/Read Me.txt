@@ -1,0 +1,27 @@
+Thank you for your interest in my collection of 'Damaged Crates & Barrels'. This is my first Unity Asset Store contribution. Please be kind when rating this product.
+
+If you have any questions or concerns about this product, please email me directly. (see contact info below) By communicating directly with me and working out whatever problems may arise, we can help each other while benefitting everyone else too. I'll do whatever I can to iron things out with the hopes to deliver a product that you will want to use in your own games.
+
+The concept of SquareForge's Damaged Crates & Barrels is simple. I've created a foundation crate and barrel, and from there I designed 14 different variations which appear damaged in some way, shape or form. The foundation pieces are composed of individual segments of wood boards and wrought iron bands. I am including the original Blender model and accompanying textures with this package for those of you who would like to scramble these foundation pieces around some more for the purpose of creating even more variations. (See /Blender/Crates_and_Barrels.rar)
+
+To use these crates and barrels, simply drag and drop any of the Prefabs into your scene. You may rescale the objects to fit your environment. I've included a demo scene that showcases each of the 30 different models in a basic dungeon setting. 
+
+STANDARD ASSETS:
+In my demo scenes, I use the 'First Person Character Controller' provided by Unity. I've moved the /Standard Assets/ folder inside of my working folder so as to package everything together. If you are not using the demos and want to free up a few megabytes of space, you may safely remove the /Standard Assets/Character Controllers/ folder from your project. You may also safely remove the /Scene/ folder containing the demo scenes.
+
+Also, In my demo scenes, two of the Model Prefabs make use of the 'Flames' particle effects. You may feel free to add your own effects, tweak mine, or avoid using them completely. That's completely up to you. To help demonstrate the use of particle effects, Barrel 03 and Barrel 06 come with (and without) Flames. If you would like to see effects like this on other objects, it's easy to do yourself. 
+
+If you remove the /Standard Assets/Particles/ folder from your project, then the Flames in my Prefabs will no longer function, as they require scripts located within. You CAN safely remove this folder, but please be reminded that any Prefabs using the effects will no longer work. Don't be afraid to remove the Particles folder (if you are not using them). If you ever want to bring them back, you can add them any time through Unity's ASSETS -> IMPORT PACKAGE -> PARTICLES.
+
+If you use my Damaged Crates and Barrels in one of your games, I'd love to see them in action. Please send me an email and let me know about your game projects. If you find some creative way to use these objects, and want to share your discovery with others, please don't hesitate to contact me.
+
+ABOUT MY TEXTURES
+The Wood texture used in my models came from a photograph that I took of an old piece of rotton wood. The Wrought Iron texture came from a photograph of an old cast iron skillet. I edited the images to make them seamless. I've intentionally left out the crevices and dark shadowy lines between boards because I wanted to make the texture in such a way that it could be swapped out for any other seamless wood texture. If you want to try replacing the texture with something else, just be sure it's a seamless texture and that the direction of the wood grain is going top to bottom. It should end up looking like one solid piece of wood (no dividing lines between boards) The general size of the wood grain should be about the same as mine, but I think you'll find that it's very forgiving. You may want to create a new 'normal map' too. 
+
+If creating textures is not your thing, you could try downloading free seamless wood textures from online resources. Remember, it's not necessary to swap out graphics, but does open up more possibilities. You've got the Unity Prefabs ready to drop into your game, you've got the Blender Models available for tweaking, and you've got the original graphic files for reference if you decide to customize the textures. Have fun! I hope you enjoy this Unity Package!
+
+Billy McDaniel
+
+SquareForge
+http://www.squareforge.com
+info@squareforge.com
