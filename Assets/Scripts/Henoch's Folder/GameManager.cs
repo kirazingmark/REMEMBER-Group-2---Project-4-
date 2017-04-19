@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour {
@@ -19,5 +20,9 @@ public class GameManager : MonoBehaviour {
         {
             Application.Quit();
         }
+		if (Input.GetKey(KeyCode.R))
+		{
+			SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex);
+		}
     }
 }
