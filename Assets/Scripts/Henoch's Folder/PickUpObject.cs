@@ -9,6 +9,7 @@ public class PickUpObject : MonoBehaviour {
     public bool isCarrying;
     public bool isOpening;
     public bool isTurn;
+    public bool enter;
     public float distance;
     public float smooth;
     public float timer = 5;
@@ -121,6 +122,7 @@ public class PickUpObject : MonoBehaviour {
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit))
             {
+
                 FirePlace fp = hit.collider.GetComponent<FirePlace>();
                 if (fp != null)
                 {
@@ -152,5 +154,34 @@ public class PickUpObject : MonoBehaviour {
         }
     }
 
+    void OnGUI()
+    {
+        int x = Screen.width / 2;
+        int y = Screen.height / 2;
 
+        Ray activateRay = Camera.main.ScreenPointToRay(new Vector3(x, y));
+        RaycastHit hit;
+
+        if (Physics.Raycast(activateRay, out hit))
+        {
+            FirePlace fp = hit.collider.GetComponent<FirePlace>();
+
+            if (fp != null)
+            {
+                enter = true;
+            }
+            else
+            {
+                enter = false;
+            }
+
+            if (enter == true)
+            {
+                GUI.Label(new Rect(Screen.width / 2 - 75, Screen.height - 200, 350, 80), "<color=white><size=35>Activate - 'E'</size></color>");
+            }
+            else {
+                
+            }
+        }
+    }
 }
