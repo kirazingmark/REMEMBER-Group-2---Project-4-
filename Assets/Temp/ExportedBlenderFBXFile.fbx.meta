@@ -1,37 +1,43 @@
 fileFormatVersion: 2
-guid: fac28fb6849ab1341b81d3fc1085d73f
-timeCreated: 1491816077
-licenseType: Free
+guid: b1c27b948c18c404cae32e93944a8ba5
+timeCreated: 1492591074
+licenseType: Pro
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: Plank_01
-    100002: Plank_01_Plank_01_Nail_01
-    100004: Plank_01_Plank_01_Nail_02
-    100006: Plank_01_Plank_01_Nail_04
-    100008: Plank_01_Plank_01_Nail_05
-    100010: //RootNode
-    400000: Plank_01
-    400002: Plank_01_Plank_01_Nail_01
-    400004: Plank_01_Plank_01_Nail_02
-    400006: Plank_01_Plank_01_Nail_04
-    400008: Plank_01_Plank_01_Nail_05
-    400010: //RootNode
-    2300000: Plank_01
-    2300002: Plank_01_Plank_01_Nail_01
-    2300004: Plank_01_Plank_01_Nail_02
-    2300006: Plank_01_Plank_01_Nail_04
-    2300008: Plank_01_Plank_01_Nail_05
-    3300000: Plank_01
-    3300002: Plank_01_Plank_01_Nail_01
-    3300004: Plank_01_Plank_01_Nail_02
-    3300006: Plank_01_Plank_01_Nail_04
-    3300008: Plank_01_Plank_01_Nail_05
-    4300000: Plank_01
-    4300002: Plank_01_Plank_01_Nail_01
-    4300004: Plank_01_Plank_01_Nail_02
-    4300006: Plank_01_Plank_01_Nail_04
-    4300008: Plank_01_Plank_01_Nail_05
+    100000: //RootNode
+    100002: Plane
+    100004: Plane_001
+    100006: Plane_002
+    100008: Plane_003
+    100010: Plane_004
+    100012: Window_Armature
+    100014: Window_Bone
+    100016: Window_Handle_Bone
+    400000: //RootNode
+    400002: Plane
+    400004: Plane_001
+    400006: Plane_002
+    400008: Plane_003
+    400010: Plane_004
+    400012: Window_Armature
+    400014: Window_Bone
+    400016: Window_Handle_Bone
+    2300000: Plane_001
+    2300002: Plane_004
+    3300000: Plane_001
+    3300002: Plane_004
+    4300000: Plane_004
+    4300002: Plane_001
+    4300004: Plane_002
+    4300006: Plane
+    4300008: Plane_003
+    7400000: Default Take
+    7400002: Window_Action
+    9500000: //RootNode
+    13700000: Plane
+    13700002: Plane_002
+    13700004: Plane_003
   materials:
     importMaterials: 1
     materialName: 0
@@ -94,7 +100,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

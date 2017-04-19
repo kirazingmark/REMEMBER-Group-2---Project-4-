@@ -1,17 +1,18 @@
 fileFormatVersion: 2
-guid: f60f1f763b9e47a489fecfa3a425c7e2
-timeCreated: 1491750768
-licenseType: Free
+guid: 802d524dec2932c48a908d1ef6c1c584
+timeCreated: 1492591067
+licenseType: Pro
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: default
-    100002: //RootNode
-    400000: default
-    400002: //RootNode
-    2300000: default
-    3300000: default
-    4300000: default
+    100000: //RootNode
+    100002: objArch31_001_obj_01
+    400000: //RootNode
+    400002: objArch31_001_obj_01
+    2300000: objArch31_001_obj_01
+    3300000: objArch31_001_obj_01
+    4300000: objArch31_001_obj_01
+    9500000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
@@ -74,7 +75,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
