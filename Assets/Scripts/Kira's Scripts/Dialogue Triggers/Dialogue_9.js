@@ -1,6 +1,8 @@
 ﻿
 // VARIABLES AND CONSTANTS.
 private var enter : boolean;
+private var played : float = 0;
+public var customFont : Font;
 
 // Start Function.
 function Start() {
@@ -15,7 +17,9 @@ function Update() {
 function OnGUI() {
     
     if(enter){
-        GUI.Label(new Rect(Screen.width/2 - 75, Screen.height - 200, 350, 80), "<color=white><size=35>Locked</size></color>");
+		GUI.skin.font = customFont;
+        GUI.Label(new Rect(Screen.width/2.5 - 75, Screen.height - 100, 1500, 500), "<color=white><size=45><b><i>Oh my God! I'm back!</i></b></size></color>");
+
     }
 }
 
@@ -23,14 +27,24 @@ function OnGUI() {
 function OnTriggerEnter (other : Collider) {
     
     if (other.gameObject.tag == "Player") {
-        enter = true;
+		
+		if (played == 0){
+			
+			enter = true;
+			yield WaitForSeconds(2);
+			enter = false;
+			played = 1;
+		}
+		else {
+			played = 1;
+		}
     }
 }
 
     //Deactivate the Main function when player is go away from Door.
     function OnTriggerExit (other : Collider) {
         
-        if (other.gameObject.tag == "Player") {
-            enter = false;
-        }
+        // if (other.gameObject.tag == "Player") {
+            // enter = false;
+        // }
     }
