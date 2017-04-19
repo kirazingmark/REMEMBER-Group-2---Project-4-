@@ -1,19 +1,23 @@
 fileFormatVersion: 2
-guid: f60f1f763b9e47a489fecfa3a425c7e2
-timeCreated: 1491750768
-licenseType: Free
+guid: b64f269b16516624fbfca8f8da060281
+timeCreated: 1486802172
+licenseType: Pro
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: default
-    100002: //RootNode
-    400000: default
-    400002: //RootNode
-    2300000: default
-    3300000: default
-    4300000: default
+    100000: //RootNode
+    100002: mirror
+    100004: Sky001
+    400000: //RootNode
+    400002: mirror
+    400004: Sky001
+    2300000: //RootNode
+    2300002: mirror
+    3300000: //RootNode
+    3300002: mirror
+    4300000: mirror
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
   animations:
@@ -55,7 +59,7 @@ ModelImporter:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
