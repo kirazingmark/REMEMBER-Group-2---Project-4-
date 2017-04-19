@@ -61,7 +61,7 @@ public class PickUpObject : MonoBehaviour {
 
             Ray ray = mainCamera.ScreenPointToRay(new Vector3(x, y));
             RaycastHit hit;
-            if(Physics.Raycast(ray, out hit))
+            if(Physics.Raycast(ray, out hit,10))
             {
                 PickUpable p = hit.collider.GetComponent<PickUpable>();
                 if(p != null)
@@ -120,7 +120,7 @@ public class PickUpObject : MonoBehaviour {
 
             Ray ray = mainCamera.ScreenPointToRay(new Vector3(x, y));
             RaycastHit hit;
-            if (Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(ray, out hit,10))
             {
 
                 FirePlace fp = hit.collider.GetComponent<FirePlace>();
@@ -142,7 +142,7 @@ public class PickUpObject : MonoBehaviour {
 
             Ray ray = mainCamera.ScreenPointToRay(new Vector3(x, y));
             RaycastHit hit;
-            if (Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(ray, out hit,10))
             {
                 FirePlace fp = hit.collider.GetComponent<FirePlace>();
                 if (fp != null)
