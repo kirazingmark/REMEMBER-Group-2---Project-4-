@@ -29,7 +29,6 @@ public class Player : MonoBehaviour
 		UpdateMovement();
 		UpdateCrouch();
 		_cameraController.UpdateRotation();
-		UpdateItemHold();
 	}
 
 	void UpdateMovement()
@@ -71,13 +70,5 @@ public class Player : MonoBehaviour
 		_crouched = Input.GetKey(KeyCode.LeftControl);
 		var cameraPos = _crouched ? new Vector3(0, _cameraHeightCrouch) : new Vector3(0, _cameraHeightNormal);
 		_cameraTransform.localPosition = Vector3.Lerp(_cameraTransform.localPosition, cameraPos, Time.deltaTime * 15);
-	}
-
-	void UpdateItemHold()
-	{
-		var targetEulers = _cameraController.CurrentCameraRotation;
-		targetEulers.y = Mathf.Clamp(targetEulers.y, -40, 40);
-		var targetRotation = Quaternion.Euler(-targetEulers.y, targetEulers.x, 0);
-		_fpsItemPivot.rotation = Quaternion.Slerp(_fpsItemPivot.rotation, targetRotation, 15.0f * Time.deltaTime);
 	}
 }
