@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PhaseScript : MonoBehaviour {
+public class PhaseScript : MonoBehaviour
+{
 
     [Header("Unit Offset Between Worlds")]
     public float worldOffset;
@@ -38,7 +39,7 @@ public class PhaseScript : MonoBehaviour {
     }
     ///////////  End Singleton Block  ///////////
 
-    void Start ()
+    void Start()
     {
         if (tagSearch == true)
         {
@@ -53,13 +54,13 @@ public class PhaseScript : MonoBehaviour {
             phaseCameraOffset = worldOffset;
         }
     }
-	
-	void Update ()
+
+    void Update()
     {
         PhaseCameraControl();
 
         ViewToggle();
-	}
+    }
 
     public void Transition()
     {
@@ -84,7 +85,7 @@ public class PhaseScript : MonoBehaviour {
 
     void SearchForObjects()
     {
-        player      = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("Player");
         phaseCamera = GameObject.FindGameObjectWithTag("PhaseCamera");
     }
 
@@ -112,6 +113,6 @@ public class PhaseScript : MonoBehaviour {
                 viewEnabled = true;
                 phaseCamera.SetActive(true);
             }
-        } 
+        }
     }
 }
