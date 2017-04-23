@@ -8,12 +8,17 @@ public class Flashlight : MonoBehaviour {
 	public Light flashlight;
 	public float battery = 10;
 
-	// Use this for initialization
-	void Start () {
+    public AudioClip lightOn;
+    public AudioClip lightOff;
+    AudioSource audioPlayBack;
+
+    // Use this for initialization
+    void Start () {
 		//starting with lights off
 		flashlight.enabled = false;
+        audioPlayBack = GetComponent<AudioSource>();
 
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -21,10 +26,12 @@ public class Flashlight : MonoBehaviour {
 
 		//turning on
 		if (Input.GetKeyDown (KeyCode.F) && flashlight.enabled == false) {
-			flashlight.enabled = true;
+            audioPlayBack.PlayOneShot(lightOn, 0.5F);
+            flashlight.enabled = true;
 		} 
 		else if (Input.GetKeyDown (KeyCode.F) && flashlight.enabled == true) {
-			flashlight.enabled = false;
+            audioPlayBack.PlayOneShot(lightOff, 0.5F);
+            flashlight.enabled = false;
 		} 
 		//if oin battery decreasing 
 		if (flashlight.enabled == true) {

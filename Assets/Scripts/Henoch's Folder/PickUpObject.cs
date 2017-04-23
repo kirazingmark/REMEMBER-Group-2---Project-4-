@@ -15,11 +15,17 @@ public class PickUpObject : MonoBehaviour {
     public float smooth;
     public float timer = 5;
 
-	// Use this for initialization
-	void Start () {
-        
-       
-	}
+    public AudioClip pickup;
+    public AudioClip drop;
+    public AudioClip teleportFire;
+    public AudioClip teleportFireBack;
+    AudioSource audioPlayBack;
+
+    // Use this for initialization
+    void Start () {
+
+        audioPlayBack = GetComponent<AudioSource>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -67,6 +73,7 @@ public class PickUpObject : MonoBehaviour {
                 PickUpable p = hit.collider.GetComponent<PickUpable>();
                 if(p != null)
                 {
+                    audioPlayBack.PlayOneShot(pickup, 1.0F);
                     isCarrying = true;
                     carriedObject = p.gameObject;
                     p.rb.isKinematic = true;
@@ -85,6 +92,7 @@ public class PickUpObject : MonoBehaviour {
 
     void dropObject()
     {
+        audioPlayBack.PlayOneShot(drop, 1.0F);
         isCarrying = false;
         carriedObject.gameObject.GetComponent<Rigidbody>().isKinematic = false;
         carriedObject = null;
@@ -127,6 +135,8 @@ public class PickUpObject : MonoBehaviour {
                 FirePlace fp = hit.collider.GetComponent<FirePlace>();
                 if (fp != null)
                 {
+
+                    audioPlayBack.PlayOneShot(teleportFire, 1.0F);
                     isTurn = true;
                     PhasingScript.Instance.Transition();
                 }
@@ -148,6 +158,7 @@ public class PickUpObject : MonoBehaviour {
                 FirePlace fp = hit.collider.GetComponent<FirePlace>();
                 if (fp != null)
                 {
+                    audioPlayBack.PlayOneShot(teleportFireBack, 1.0F);
                     isTurn = false;
                     PhasingScript.Instance.Transition();
                 }
@@ -185,4 +196,5 @@ public class PickUpObject : MonoBehaviour {
             }
         }
     }
+
 }
