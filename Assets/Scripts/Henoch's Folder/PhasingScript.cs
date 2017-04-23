@@ -26,6 +26,7 @@ public class PhasingScript : MonoBehaviour
     public bool turnWorld = false;
 
     public bool turnOn;
+	public bool getMirror;
 
     ///////////  Start Singleton Block  ///////////
     public static PhasingScript Instance;
@@ -63,18 +64,9 @@ public class PhasingScript : MonoBehaviour
 
         //comment this part so it can work on henoch's portion
         //Transition();
-
-        if (Input.GetKeyDown(KeyCode.Q) && turnOn == false)
-        {
-            phaseCamera.SetActive(true);
-            turnOn = true;
-        }
-        else if(Input.GetKeyDown(KeyCode.Q) && turnOn == true)
-        {
-            phaseCamera.SetActive(false);
-            turnOn = false;
-        }
-
+		if (getMirror) {
+			Toggle ();
+		}
        
     }
 
@@ -118,4 +110,18 @@ public class PhasingScript : MonoBehaviour
         phaseCamera.transform.position = targetPosition;
         phaseCamera.transform.rotation = playerCamera.transform.rotation;
     }
+
+	void Toggle()
+	{
+		if (Input.GetKeyDown(KeyCode.Q) && turnOn == false)
+		{
+			phaseCamera.SetActive(true);
+			turnOn = true;
+		}
+		else if(Input.GetKeyDown(KeyCode.Q) && turnOn == true)
+		{
+			phaseCamera.SetActive(false);
+			turnOn = false;
+		}
+	}
 }

@@ -9,6 +9,7 @@ public class FirePlace : MonoBehaviour {
     // Use this for initialization
     void Start () {
         rb = GetComponent<Rigidbody>();
+		rb.constraints = RigidbodyConstraints.FreezeAll;
     }
 	
 	// Update is called once per frame

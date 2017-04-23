@@ -9,6 +9,7 @@ public class PickUpObject : MonoBehaviour {
     public bool isCarrying;
     public bool isOpening;
     public bool isTurn;
+	public bool haveKey;
     public bool enter;
     public float distance;
     public float smooth;
