@@ -61,7 +61,7 @@ public class PickUpObject : MonoBehaviour {
 
     void PickUp()
     {
-        if(Input.GetKeyDown(KeyCode.E))
+		if(Input.GetButtonDown("PickUp"))
         {
             int x = Screen.width / 2;
             int y = Screen.height / 2;
@@ -84,7 +84,7 @@ public class PickUpObject : MonoBehaviour {
 
     void checkDrop()
     {
-        if(Input.GetKeyDown(KeyCode.E))
+		if(Input.GetButtonDown("PickUp"))
         {
             dropObject();
         }
@@ -122,7 +122,7 @@ public class PickUpObject : MonoBehaviour {
 
     void firePlace()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+		if (Input.GetButtonDown("PickUp"))
         {
             int x = Screen.width / 2;
             int y = Screen.height / 2;
@@ -146,7 +146,7 @@ public class PickUpObject : MonoBehaviour {
 
     void TeleportBack()
     {
-        if (Input.GetKeyDown(KeyCode.E) && isTurn == true)
+		if (Input.GetButtonDown("PickUp") && isTurn == true)
         {
             int x = Screen.width / 2;
             int y = Screen.height / 2;

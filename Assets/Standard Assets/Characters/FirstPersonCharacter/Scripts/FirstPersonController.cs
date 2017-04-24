@@ -84,11 +84,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
 
 			//camera invert
-			if(Input.GetKey(KeyCode.I) && m_IsInverted == false){
+			if(Input.GetButtonDown("Invert") && m_IsInverted == false){
 				m_MouseLook.YSensitivity = -2;
 				m_IsInverted = true;
 			}
-			else if(Input.GetKey(KeyCode.I) && m_IsInverted == true){
+			else if(Input.GetButtonDown("Invert") && m_IsInverted == true){
 				m_MouseLook.YSensitivity = 2;
 				m_IsInverted = false;
 			}
