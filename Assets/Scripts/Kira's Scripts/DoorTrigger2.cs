@@ -66,7 +66,7 @@ public class DoorTrigger2 : MonoBehaviour {
         if (enter)
         {
 
-            GUI.Label(new Rect(Screen.width / 2 - 75, Screen.height - 200, 350, 80), "<color=white><size=35>Open/Close - 'E'</size></color>");
+            GUI.Label(new Rect(Screen.width / 2 - 75, Screen.height - 200, 350, 80), "<color=white><size=35>Open/Close - 'X'</size></color>");
         }
     }
 
