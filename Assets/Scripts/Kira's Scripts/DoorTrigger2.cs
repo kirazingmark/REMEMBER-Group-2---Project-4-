@@ -43,12 +43,12 @@ public class DoorTrigger2 : MonoBehaviour {
         }
 
 
-        if (Input.GetKeyDown("e") && enter)
+		if (Input.GetButtonDown("PickUp") && enter)
         {
             OpenDoor();
             open = !open;
         }
-        else if (Input.GetKeyDown("e") && !enter)
+		else if (Input.GetButtonDown("PickUp") && !enter)
         {
             // Nothing.
         }

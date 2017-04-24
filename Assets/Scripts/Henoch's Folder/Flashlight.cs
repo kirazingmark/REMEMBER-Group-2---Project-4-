@@ -25,11 +25,11 @@ public class Flashlight : MonoBehaviour {
 		//turning the light on and off
 
 		//turning on
-		if (Input.GetKeyDown (KeyCode.F) && flashlight.enabled == false) {
+		if (Input.GetButtonDown("Flash") && flashlight.enabled == false) {
             audioPlayBack.PlayOneShot(lightOn, 0.5F);
             flashlight.enabled = true;
 		} 
-		else if (Input.GetKeyDown (KeyCode.F) && flashlight.enabled == true) {
+		else if (Input.GetButtonDown("Flash") && flashlight.enabled == true) {
             audioPlayBack.PlayOneShot(lightOff, 0.5F);
             flashlight.enabled = false;
 		} 

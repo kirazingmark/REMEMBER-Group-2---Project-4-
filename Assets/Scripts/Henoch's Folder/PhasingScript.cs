@@ -113,12 +113,12 @@ public class PhasingScript : MonoBehaviour
 
 	void Toggle()
 	{
-		if (Input.GetKeyDown(KeyCode.Q) && turnOn == false)
+		if (Input.GetButtonDown("Mirror") && turnOn == false)
 		{
 			phaseCamera.SetActive(true);
 			turnOn = true;
 		}
-		else if(Input.GetKeyDown(KeyCode.Q) && turnOn == true)
+		else if(Input.GetButtonDown("Mirror") && turnOn == true)
 		{
 			phaseCamera.SetActive(false);
 			turnOn = false;
