@@ -7,6 +7,8 @@ public class MainMenu : MonoBehaviour {
 
 	public string playGameLevel;
 
+	public string playMenuLevel;
+
 
 
 	//Play Game Function.
@@ -26,6 +28,18 @@ public class MainMenu : MonoBehaviour {
 	{
 		
 		Application.Quit ();
+
+
+	}
+
+
+
+	//Quit game function.
+	public void MainMenus()
+	{
+
+
+		SceneManager.LoadScene (playMenuLevel);
 
 
 	}
