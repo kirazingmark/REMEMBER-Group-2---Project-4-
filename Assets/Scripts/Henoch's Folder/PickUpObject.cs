@@ -189,7 +189,7 @@ public class PickUpObject : MonoBehaviour {
 
             if (enter == true)
             {
-                GUI.Label(new Rect(Screen.width / 2 - 75, Screen.height - 200, 350, 80), "<color=white><size=35>Activate - 'E'</size></color>");
+                GUI.Label(new Rect(Screen.width / 2 - 75, Screen.height - 200, 350, 80), "<color=white><size=35>Activate - 'X'</size></color>");
             }
             else {
                 

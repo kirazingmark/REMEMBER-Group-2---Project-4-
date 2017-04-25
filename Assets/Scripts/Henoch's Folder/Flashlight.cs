@@ -7,6 +7,7 @@ public class Flashlight : MonoBehaviour {
 	//basic variables
 	public Light flashlight;
 	public float battery = 10;
+	public GameObject flash;
 
     public AudioClip lightOn;
     public AudioClip lightOff;
@@ -16,6 +17,7 @@ public class Flashlight : MonoBehaviour {
     void Start () {
 		//starting with lights off
 		flashlight.enabled = false;
+        flash.transform.Rotate(0, 0, 270);
         audioPlayBack = GetComponent<AudioSource>();
 
     }
@@ -28,11 +30,14 @@ public class Flashlight : MonoBehaviour {
 		if (Input.GetButtonDown("Flash") && flashlight.enabled == false) {
             audioPlayBack.PlayOneShot(lightOn, 0.5F);
             flashlight.enabled = true;
+            flash.transform.Rotate(0, 0, -270);
+
 		} 
 		else if (Input.GetButtonDown("Flash") && flashlight.enabled == true) {
             audioPlayBack.PlayOneShot(lightOff, 0.5F);
             flashlight.enabled = false;
-		} 
+            flash.transform.Rotate(0, 0, 270);
+        } 
 		//if oin battery decreasing 
 		if (flashlight.enabled == true) {
 			battery -= Time.deltaTime;
@@ -41,6 +46,7 @@ public class Flashlight : MonoBehaviour {
 		if (battery <= 0) {
 			flashlight.enabled = false;
 			battery = 10.0f;
-		}
+            flash.transform.Rotate(0, 0, 270);
+        }
 	}
 }

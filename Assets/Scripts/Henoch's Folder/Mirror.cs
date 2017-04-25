@@ -8,7 +8,7 @@ public class Mirror : PickUpable {
 
 	// Use this for initialization
 	void Start () {
-		rb.constraints = RigidbodyConstraints.FreezeAll;
+		//rb.constraints = RigidbodyConstraints.FreezeAll;
 
 	}
 
