@@ -8,6 +8,8 @@ public class UIManager : MonoBehaviour
 
     public Text time;
     public Text timeBig;
+	public Image image;
+
     public float timer = 0.0f;
     public float pTimer;
     public float cTimer;
@@ -17,12 +19,15 @@ public class UIManager : MonoBehaviour
     public bool deleteData;
 
     List<float> fList = new List<float>();
+	public PhasingScript ps;
 
     // Use this for initialization
     void Start()
     {
         if (deleteData)
             PlayerPrefs.DeleteAll();
+
+
     }
 
     // Update is called once per frame
@@ -49,6 +54,10 @@ public class UIManager : MonoBehaviour
         }
         timeBig.text = "Best Time = " + PlayerPrefs.GetFloat("minute").ToString("F0") + "m " + PlayerPrefs.GetFloat("cTimer").ToString("F1") + "s";
 
+		if (ps.getMirror == false)
+			image.enabled = false;
+		if (ps.getMirror)
+			image.enabled = true;
     }
 
     void OnApplicationQuit()
