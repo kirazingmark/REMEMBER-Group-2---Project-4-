@@ -14,7 +14,7 @@ function Update() {
 function OnGUI() {
     
     if(enter){
-        GUI.Label(new Rect(Screen.width/2 - 75, Screen.height - 200, 500, 500), "<color=white><size=25><i>Hint: You can move certain objects in your path by pressing 'E'</i></size></color>");
+        GUI.Label(new Rect(Screen.width/2 - 75, Screen.height - 200, 500, 500), "<color=white><size=25><i>Hint: You can move certain objects in your path by pressing 'X'</i></size></color>");
     }
 }
 

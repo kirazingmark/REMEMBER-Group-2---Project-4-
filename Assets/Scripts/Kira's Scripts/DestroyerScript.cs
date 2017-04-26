@@ -8,7 +8,11 @@ public class DestroyerScript : MonoBehaviour {
     // public string Ending; // This will be the Credits Scene.
 
     public AudioClip clip;
+    public AudioClip clip2;
+    public AudioClip clip3;
+    public AudioClip clip4;
     public AudioSource clipSource;
+    public AudioSource backgroundMusic;
 
     public float volume = 1.0f;
 
@@ -26,9 +30,9 @@ public class DestroyerScript : MonoBehaviour {
 
     IEnumerator WaitAndDie()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(4);
         //SceneManager.exit();
-        Application.Quit();
+        SceneManager.LoadScene("Credit Scene");
     }
 
     void OnTriggerEnter(Collider other)
@@ -37,7 +41,12 @@ public class DestroyerScript : MonoBehaviour {
         {
             if (!hasPlayed)
             {
+                backgroundMusic.Pause();
                 clipSource.PlayOneShot(clip, volume);
+                clipSource.PlayOneShot(clip2, volume);
+                clipSource.PlayOneShot(clip3, 0.9f);
+                clipSource.PlayOneShot(clip4, volume);
+
                 hasPlayed = true;
             }
 

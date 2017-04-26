@@ -18,7 +18,7 @@ function OnGUI() {
     
     if(enter){
 		GUI.skin.font = customFont;
-        GUI.Label(new Rect(Screen.width/2.75 - 75, Screen.height - 100, 1500, 500), "<color=white><size=45><b><i>Is this real? Could I really be back home?</i></b></size></color>");
+        GUI.Label(new Rect(Screen.width/2.75 - 75, Screen.height - 100, 1500, 500), "<color=white><size=45><i>Is this real? Could I really be back home?</i></size></color>");
 
     }
 }

@@ -15,6 +15,7 @@ public class PhasingScript : MonoBehaviour
     public GameObject player;
     public GameObject playerCamera;
     public GameObject phaseCamera;
+    public GameObject mirrorOverlay;
 
     [Header("Player Above or Below?")]
     public bool playerAbove = true;
@@ -56,6 +57,7 @@ public class PhasingScript : MonoBehaviour
         }
 
         phaseCamera.SetActive(false);
+        mirrorOverlay.SetActive(false);
     }
 
     void Update()
@@ -115,11 +117,13 @@ public class PhasingScript : MonoBehaviour
 	{
 		if (Input.GetButtonDown("Mirror") && turnOn == false)
 		{
+            mirrorOverlay.SetActive(true);
 			phaseCamera.SetActive(true);
 			turnOn = true;
 		}
 		else if(Input.GetButtonDown("Mirror") && turnOn == true)
 		{
+            mirrorOverlay.SetActive(false);
 			phaseCamera.SetActive(false);
 			turnOn = false;
 		}

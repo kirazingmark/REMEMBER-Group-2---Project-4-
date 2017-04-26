@@ -18,7 +18,7 @@ function OnGUI() {
     
     if(enter){
 		GUI.skin.font = customFont;
-        GUI.Label(new Rect(Screen.width/5 - 75, Screen.height - 100, 1500, 500), "<color=white><size=45><b><i>Home...it's hard to believe I haven't been back since the Fire...</i></b></size></color>");
+        GUI.Label(new Rect(Screen.width/5 - 0, Screen.height - 100, 1500, 500), "<color=white><size=45><i>EVEN AFTER THE FIRE, DOES IT SEE CLEARLY OR DARKLY?</i></size></color>");
 
     }
 }
