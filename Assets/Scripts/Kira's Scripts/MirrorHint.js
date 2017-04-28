@@ -14,7 +14,7 @@ function Update() {
 function OnGUI() {
     
     if(enter){
-        GUI.Label(new Rect(Screen.width/2 - 75, Screen.height - 200, 500, 500), "<color=white><size=25><i>Hint: Press 'LB' to use Mirror</i></size></color>");
+        GUI.Label(new Rect(Screen.width/2 - 75, Screen.height - 200, 500, 500), "<color=white><size=25><i>HINT: PRESS 'LB' TO USE MIRROR</i></size></color>");
     }
 }
 

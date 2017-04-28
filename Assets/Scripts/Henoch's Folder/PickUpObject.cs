@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class PickUpObject : MonoBehaviour {
 
@@ -20,6 +21,8 @@ public class PickUpObject : MonoBehaviour {
     public AudioClip teleportFire;
     public AudioClip teleportFireBack;
     AudioSource audioPlayBack;
+
+    public FirstPersonController fps;
 
     // Use this for initialization
     void Start () {
@@ -48,9 +51,14 @@ public class PickUpObject : MonoBehaviour {
             firePlace();
         }
        
-        
-
-        
+        if(isCarrying)
+        {
+            fps.m_JumpSpeed = 0;
+        }
+        if(!isCarrying)
+        {
+            fps.m_JumpSpeed = 3;
+        }
 
     }
 

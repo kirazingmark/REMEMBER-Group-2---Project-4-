@@ -7,8 +7,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
     [Serializable]
     public class MouseLook
     {
-        public float XSensitivity = 13.0f;
-        public float YSensitivity = 13.0f;
+        public float XSensitivity = 25.0f;
+        public float YSensitivity = 25.0f;
         public bool clampVerticalRotation = true;
         public float MinimumX = -90F;
         public float MaximumX = 90F;

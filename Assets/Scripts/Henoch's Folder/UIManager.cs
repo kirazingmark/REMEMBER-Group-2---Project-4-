@@ -58,6 +58,11 @@ public class UIManager : MonoBehaviour
 			image.enabled = false;
 		if (ps.getMirror)
 			image.enabled = true;
+
+        if(Input.GetButtonDown("Fire2") && Input.GetButtonDown("Fire3"))
+        {
+            
+        }
     }
 
     void OnApplicationQuit()

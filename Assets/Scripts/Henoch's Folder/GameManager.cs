@@ -6,6 +6,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour {
 
     PlayerMovement player;
+    public Pause pause;
 
 	// Use this for initialization
 	void Start () {
@@ -16,13 +17,21 @@ public class GameManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (Input.GetKey(KeyCode.Escape))
+        if(pause.isPaused == false)
         {
-            Application.Quit();
+            if (Input.GetButtonDown("Fire3"))
+            {
+                SceneManager.LoadScene("MainMenu");
+            }
+            if (Input.GetButtonDown("Fire2"))
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
         }
-		if (Input.GetKey(KeyCode.R))
-		{
-			SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex);
-		}
+        
+       /* if(Input.GetButtonDown("Fire2") && Input.GetButtonDown("Fire3"))
+        {
+            SceneManager.LoadScene("MainMenu");
+        }*/
     }
 }

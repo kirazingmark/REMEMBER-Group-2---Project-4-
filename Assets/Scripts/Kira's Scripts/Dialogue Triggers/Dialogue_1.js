@@ -18,7 +18,7 @@ function OnGUI() {
     
     if(enter){
 		GUI.skin.font = customFont;
-        GUI.Label(new Rect(Screen.width/5 - 75, Screen.height - 100, 1500, 500), "<color=white><size=45><i>HOME....WHEN VIEWED THROUGH A MIRROR, WHAT DOES THE MIRROR SEE?</i></size></color>");
+        GUI.Label(new Rect(Screen.width/5 - 75, Screen.height - 100, 750, 500), "<color=white><size=45><i>HOME....WHEN VIEWED THROUGH A MIRROR, WHAT DOES THE MIRROR SEE?</i></size></color>");
 
     }
 }

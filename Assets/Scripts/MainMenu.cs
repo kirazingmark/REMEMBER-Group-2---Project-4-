@@ -32,6 +32,14 @@ public class MainMenu : MonoBehaviour {
 
 	}
 
+    public void Start()
+    {
+        Cursor.visible = false;
+        
+    }
+
+
+    //Quit game function.
 
 
 	//Quit game function.
@@ -39,7 +47,7 @@ public class MainMenu : MonoBehaviour {
 	{
 
 
-		SceneManager.LoadScene (playMenuLevel);
+		SceneManager.LoadScene ("MainMenu");
 
 
 	}
